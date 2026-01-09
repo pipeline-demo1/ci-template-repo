@@ -1,0 +1,15 @@
+name: Reusable CI Template
+
+on:
+  workflow_call:
+    inputs:
+      app_name:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: echo "Building app: ${{ inputs.app_name }}"
